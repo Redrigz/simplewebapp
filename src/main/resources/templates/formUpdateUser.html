@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link crossorigin="anonymous"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          rel="stylesheet">
+
+    <link crossorigin="anonymous"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+          rel="stylesheet">
+
+    <title>User Web Application</title>
+
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        .special {
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href=".">Users management system</a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container special">
+
+    <h2 class="h2">Edit user</h2>
+    <div>
+        <form method="post"
+              th:action="@{/saveUser}" th:object="${user}">
+            <div class="form-group">
+                <input class="form-control" th:field="*{id}" type="hidden">
+            </div>
+            <div class="form-group">
+                <label for="fullNameInput">FullName</label>
+                <input
+                        aria-describedby="fullNameHelp" class="form-control" id="fullNameInput"
+                        placeholder="Enter the fullName"
+                        th:field="*{fullName}" type="text"> <small
+                    class="form-text text-muted" id="fullNameHelp">Please write the user's full name.</small>
+            </div>
+            <div class="form-group">
+                <label for="dobInput">Date of Birth</label>
+                <input
+                        aria-describedby="lastNameHelp" class="form-control" id="dobInput"
+                        placeholder="Enter date of birth"
+                        th:field="*{dob}" type="text"> <small
+                    class="form-text text-muted" id="lastNameHelp">Please write the user's date of birth.</small>
+            </div>
+            <div class="form-group">
+                <label for="emailInput">Email</label>
+                <input
+                        aria-describedby="emailHelp" class="form-control" id="emailInput"
+                        placeholder="Enter email address"
+                        th:field="*{email}" type="text"> <small
+                    class="form-text text-muted" id="emailHelp">Please write the user's email address.</small>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Edit</button>
+        </form>
+    </div>
+
+</div>
+
+<script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+        crossorigin="anonymous"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
