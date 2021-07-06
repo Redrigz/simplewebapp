@@ -20,12 +20,12 @@ public class UserControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @Test
-    public void testGetUsers() throws Exception {
-
-        mockMvc.perform(get("/"))
-                .andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(view().name("home"));
-    }
+//    @Test
+//    public void testGetUsers() throws Exception {
+//
+//        mockMvc.perform(get("/"))
+//                .andDo(print())
+//                .andExpect(status().isOk())
+//                .andExpect(view().name("home"));
+//    }
 }
